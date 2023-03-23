@@ -11,13 +11,13 @@ section .data
 ; -----
 ; Define constants
 
-EXIT_SUCCESS 		equ 0 	; successful operation
-SYS_exit 				equ 60 ; call code for terminate
+EXIT_SUCCESS 	equ 0 ; successful operation
+SYS_exit 	equ 60 ; call code for terminate
 
 ; -----
 ; Define Data.
 
-numbers						dq 121, 122, 123, 124, 125
+numbers		dq 121, 122, 123, 124, 125
 len 							dq 5
 
 ; ****************************************************
@@ -27,10 +27,10 @@ _start:
 
 ; Loop to put numbers on stack.
 
-	mov		rcx, 	qword [len]
-	mov	   rbx, numbers
-	mov		r12, 	0
-	mov 	rax, 	0
+	mov	rcx, qword [len]
+	mov	rbx, numbers
+	mov	r12, 0
+	mov 	rax, 0
 pushLoop:
 	push 	qword [rbx+r12*8]
 	inc 	r12
